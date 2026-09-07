@@ -1,0 +1,105 @@
+.skills {
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  width: 100%;
+  padding: 100px 20px 0;
+  text-align: center;
+}
+.skill-category {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  flex-direction: column;
+  padding: 20px 10px;
+}
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 40px;
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+.category-icon svg {
+  width: var(--h2-size);
+  height: var(--h2-size);
+  color: var(--highlight);
+}
+.skill-card {
+  padding: 10px 20px;
+  background-color: var(--secondary);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  transition:
+    border-color 0.5s ease-in-out,
+    background-color 0.5s ease-in-out,
+    transform 0.5s ease-in-out;
+}
+.skill-description {
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+  overflow: hidden;
+  margin: 0;
+  transition:
+    opacity 0.5s ease-in-out,
+    max-height 0.5s ease-in-out,
+    margin 0.5s ease-in-out;
+}
+.skill-card:hover .skill-description {
+  opacity: 1;
+  visibility: visible;
+  max-height: 150px;
+  margin: 10px 0 0;
+  transition: all .5s ease-in-out;
+}
+.skill-icon svg {
+  width: var(--h3-size);
+  height: var(--h3-size);
+  color: var(--highlight);
+}
+.skill-card:hover {
+  background-color: var(--accent);
+  border-color: var(--heading);
+  transform: translate(0, -5px);
+  transition: all 0.3s ease-in-out;
+}
+.skill-arrow {
+  rotate: 45deg;
+  transition: all 0.3s ease-in-out;
+}
+.skill-card:hover .skill-arrow {
+  translate: 3px -3px;
+  rotate: -45deg;
+  transition: all 0.3s ease-in-out;
+}
+.skills-statement p {
+  margin: 20px 0;
+}
+
+
+  @media (max-width: 1000px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 800px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}

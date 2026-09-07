@@ -1,0 +1,115 @@
+.about-me{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 100px 10px 0;
+    text-align: center;
+    transition: all .3s ease-in-out;
+}
+
+.about-content{
+display: grid;
+    grid-template-columns: 40% 50%;
+    gap: 20px;
+    width: 100%;
+    text-align: center;
+}
+.about-profile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+}
+.about-profile .profile-img{
+    width:300px ;
+    height: 300px;
+    border-radius: 50%;
+    padding: 10px;
+    border: 1px solid var(--highlight);
+    overflow: hidden;
+    
+}
+.profile-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease-in-out;
+
+
+}
+.profile-img img:hover{
+  scale: 1.1;
+}
+.profile-name{
+    font-size: var(--h3-size);
+    color: var(--highlight);
+    font-family: var(--heading-font);
+    margin-bottom: 10px;
+}
+.currently-building{
+  color: rgb(0, 252, 84);
+}
+.currently-building::before{
+  content: "●";
+  color: rgb(0, 252, 84);
+
+}
+.about-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.about-info p{
+  text-align: justify;
+}
+.about-details{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 20px;
+  /* background-color: var(--secondary);
+  border: 1px solid var(--border); */
+  border-radius: 10px;
+  padding: 20px;
+  gap: 10px;
+
+}
+.about-detail{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--secondary);
+  border: 1px solid var(--border);
+  padding: 20px 10px;
+  color: var(--heading);
+  border-radius: 15px;
+  width: 100%;
+  transition: all .3s ease-in-out;
+  gap: 20px;
+}
+.about-detail:hover{
+  background: var(--accent);
+  border-color: var(--heading);
+  transition: all .3s ease-in-out;
+  translate: 0 -2px;
+}
+.about-detail:hover strong{
+  color: var(--highlight-hover);
+  transition: all .3s ease-in-out;
+}
+@media (max-width : 1045px) {
+  .about-content{
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width : 800px) {
+  .about-details{
+    grid-template-columns: 1fr;
+
+  }
+  .about-info p{
+  text-align: center;
+}
+}

@@ -1,0 +1,96 @@
+.hero{
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    animation: fadeIn 1.3s ease-in-out forwards;
+    
+}
+@keyframes fadeIn {
+  from{
+    transform: translate(0,50px);
+    opacity: 0;
+  }
+}
+.welcome {
+    /* width: 100%; */
+    border-radius: 8px;
+  left: 50%;
+  animation: welcome 1s ease-in-out ,t .1s ease-in-out ;
+  display: none;
+  background-color: var(--primary-t);
+  border: 1px solid var(--border);
+  right: 50%;
+  white-space: nowrap;
+  overflow: hidden;
+  padding:4px 8px;
+  color: var(--heading);
+  font-family: var(--highlight-font);
+  transition: all 1s ease-in-out;
+
+}
+.welcome::before{
+  content: "//";
+  color: var(--highlight);
+  margin-right: 5px;
+}
+@keyframes t {
+    from{
+        transform: translate(0,-100px);
+    width: 0;
+
+    }
+}
+@keyframes welcome {
+  from {
+    width: 0;
+
+  }
+  to{
+    width: 25ch;
+  }
+ 
+}
+.hero .hero-btns{
+  display: flex;
+  gap: 2rem ;
+  margin-top: 40px;
+}
+.hero-btn:hover svg{
+  transform: translate(3px , -3px);
+  transition: transform .3s ease-in-out;
+}
+
+.intro-description{
+    margin-top: 20px;
+    font-size: var(--p-size);
+    color: var(--text);
+    font-family: var(--text-font);
+    line-height: 1.5;
+    max-width: 1000px;
+}
+.scroll-about{
+  position: absolute;
+  bottom: 50px;
+  right: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.scroll-about:hover svg{
+  transform: translate(0,3px);
+}
+.scroll-about:hover{
+  transform: translate(0,2px);
+}
+@media (max-width:380px) {
+  .hero .hero-btns{
+    flex-direction: column;
+  }
+  .scroll-about{
+    display: none;
+  }
+}
