@@ -1,31 +1,34 @@
 import "./MyProjects.css";
 import { useReveal } from "../hooks/useReveal";
+
 function MyProjects() {
   const [headingRef, headingVisible] = useReveal();
   const [footerRef, footerVisible] = useReveal();
   const [project1Ref, project1Visible] = useReveal();
   const [project2Ref, project2Visible] = useReveal();
   const [project3Ref, project3Visible] = useReveal();
+
   return (
     <section className="projects" id="myProjects">
 
       {/* Section Heading */}
       <div
         ref={headingRef}
-        className={`section-heading reveal ${headingVisible ? "is-visible" : ""}`}
+        className={`section-heading reveal ${
+          headingVisible ? "is-visible" : ""
+        }`}
       >
-
         <span className="section-tag">
-           SELECTED WORK
+          SELECTED WORK
         </span>
 
         <h2>PROJECTS</h2>
 
         <p>
-          A selection of projects I've built while exploring
-          modern web development and creating practical digital experiences.
+          A selection of web development projects built with React.js,
+          JavaScript, APIs, and modern frontend technologies to create
+          practical, responsive, and user-friendly digital experiences.
         </p>
-
       </div>
 
 
@@ -33,59 +36,67 @@ function MyProjects() {
       <div className="projects-list">
 
 
-        {/* Project 01 */}
+        {/* ================= PROJECT 01 ================= */}
         <article
           ref={project1Ref}
-          className={`project-card featured-project reveal-scale ${project1Visible ? "is-visible" : ""}`}
+          className={`project-card featured-project reveal-scale ${
+            project1Visible ? "is-visible" : ""
+          }`}
         >
-
           <div className="project-content">
 
             <span className="project-number section-tag">
-              01{") "} 
-            
-              MANAGEMENT SYSTEM
+              01) MANAGEMENT SYSTEM
             </span>
 
             <h3>
-             <span className="important"> MIS MANAGEMENT</span> SYSTEM
+              <span className="important">
+                School MIS
+              </span>{" "}
+              Management System
             </h3>
- {/* Project Preview */}
-          <div className="project-preview">
 
-            <img
-              src="p.jpg"
-              alt="MIS Management System"
-            />
+            {/* Project Preview */}
+            <div className="project-preview">
+              <img
+                src="p.jpg"
+                alt="School Management Information System dashboard"
+              />
+            </div>
 
-
-
-          </div>
             {/* Technologies */}
             <div className="project-tech">
-
-              <span>React</span>
+              <span>React.js</span>
               <span>JavaScript</span>
               <span>Axios</span>
               <span>JSON Server</span>
-
+              <span>CRUD</span>
             </div>
-            <p>
-              A modern management system designed to handle
-              students, courses, fees, certificates, and
-              administrative workflows through an interactive interface.
-            </p>
 
+            <p>
+              A modern School Management Information System built with
+              React.js for managing students, courses, fees, certificates,
+              enrollments, and administrative workflows through a
+              responsive and interactive interface.
+            </p>
 
             {/* Actions */}
             <div className="project-actions">
 
-              <a href="#1" className="btn-primary">
+              <a
+                href="#"
+                className="btn-primary"
+                aria-label="View School Management Information System project"
+              >
                 VIEW PROJECT
                 <span>↗</span>
               </a>
 
-              <a href="#2" className="btn-secondary">
+              <a
+                href="#"
+                className="btn-secondary"
+                aria-label="View School Management Information System source code on GitHub"
+              >
                 GITHUB
                 <span>↗</span>
               </a>
@@ -93,65 +104,69 @@ function MyProjects() {
             </div>
 
           </div>
-
-
-         
-
         </article>
 
 
-
-        {/* Project 02 */}
+        {/* ================= PROJECT 02 ================= */}
         <article
           ref={project2Ref}
-          className={`project-card reveal-left ${project2Visible ? "is-visible" : ""}`}
+          className={`project-card reveal-left ${
+            project2Visible ? "is-visible" : ""
+          }`}
         >
-
           <div className="project-content">
 
             <span className="project-number section-tag">
-              02{") "}
-              E-COMMERCE
+              02) E-COMMERCE
             </span>
 
             <h3>
-              <span className="important">E-COMMERCE </span>
-              SHOP
+              <span className="important">
+                E-Commerce
+              </span>{" "}
+              Shopping Website
             </h3>
 
+            {/* Project Preview */}
+            <div className="project-preview">
+              <img
+                src="p.jpg"
+                alt="Modern e-commerce shopping website interface"
+              />
+            </div>
 
-          <div className="project-preview">
-
-            <img
-              src="p.jpg"
-              alt="Shop Project"
-            />
-
-          </div>  <div className="project-tech">
-
-              <span>React</span>
+            {/* Technologies */}
+            <div className="project-tech">
+              <span>React.js</span>
               <span>JavaScript</span>
               <span>CSS</span>
-
+              <span>Responsive UI</span>
             </div>
 
             <p>
-              A modern shopping experience focused on clean
-              product presentation, intuitive navigation,
-              and a smooth user interface.
+              A modern e-commerce shopping experience built with React.js,
+              focusing on responsive design, clean product presentation,
+              intuitive navigation, reusable components, and a smooth
+              user interface.
             </p>
 
-
-          
-
+            {/* Actions */}
             <div className="project-actions">
 
-              <a href="#1" className="btn-primary">
+              <a
+                href="#"
+                className="btn-primary"
+                aria-label="View E-Commerce shopping project"
+              >
                 VIEW PROJECT
                 <span>↗</span>
               </a>
 
-              <a href="#2" className="btn-secondary">
+              <a
+                href="#"
+                className="btn-secondary"
+                aria-label="View E-Commerce project source code on GitHub"
+              >
                 GITHUB
                 <span>↗</span>
               </a>
@@ -159,60 +174,69 @@ function MyProjects() {
             </div>
 
           </div>
-
-
         </article>
 
 
-
-        {/* Project 03 */}
+        {/* ================= PROJECT 03 ================= */}
         <article
           ref={project3Ref}
-          className={`project-card reveal-right ${project3Visible ? "is-visible" : ""}`}
+          className={`project-card reveal-right ${
+            project3Visible ? "is-visible" : ""
+          }`}
         >
-
           <div className="project-content">
 
             <span className="project-number section-tag">
-              03{") "}
-              TRADING PLATFORM
+              03) TRADING PLATFORM
             </span>
 
             <h3>
-              <span className="important">AURA-INTELLIGENCE </span>LIVE TRADE
+              <span className="important">
+                AURA-INTELLIGENCE
+              </span>{" "}
+              Live Trade
             </h3>
-<div className="project-preview">
 
-            <img
-              src="p.jpg"
-              alt="AURA-INTELLIGENCE"
-            />
-  <div className="project-tech">
-
-              <span>React</span>
-              <span>JavaScript</span>
-              <span>API</span>
-
+            {/* Project Preview */}
+            <div className="project-preview">
+              <img
+                src="p.jpg"
+                alt="AURA-INTELLIGENCE live trading platform interface"
+              />
             </div>
-          </div>
+
+            {/* Technologies */}
+            <div className="project-tech">
+              <span>React.js</span>
+              <span>JavaScript</span>
+              <span>REST API</span>
+              <span>API Integration</span>
+            </div>
+
             <p>
-              A trading-focused digital experience designed
-              around presenting financial information,
-              market data, and interactive user experiences.
+              A trading-focused web experience built around presenting
+              financial information, market data, API-driven content,
+              and interactive user interfaces in a modern responsive
+              application.
             </p>
 
-
-          
-
-
+            {/* Actions */}
             <div className="project-actions">
 
-              <a href="#1" className="btn-primary">
+              <a
+                href="#2"
+                className="btn-primary"
+                aria-label="View AURA-INTELLIGENCE Live Trade project"
+              >
                 VIEW PROJECT
                 <span>↗</span>
               </a>
 
-              <a href="#2" className="btn-secondary">
+              <a
+                href="#1"
+                className="btn-secondary"
+                aria-label="View AURA-INTELLIGENCE project source code on GitHub"
+              >
                 GITHUB
                 <span>↗</span>
               </a>
@@ -220,12 +244,7 @@ function MyProjects() {
             </div>
 
           </div>
-
-
-          
-
         </article>
-
 
       </div>
 
@@ -233,18 +252,19 @@ function MyProjects() {
       {/* Bottom Statement */}
       <div
         ref={footerRef}
-        className={`projects-footer reveal ${footerVisible ? "is-visible" : ""}`}
+        className={`projects-footer reveal ${
+          footerVisible ? "is-visible" : ""
+        }`}
       >
-
         <span className="section-tag">
           BUILD. LEARN. IMPROVE.
         </span>
 
         <p>
-          Every project is an opportunity to turn an idea
-          into something people can actually use.
+          Every project is an opportunity to turn an idea into something
+          useful, while improving my skills in modern web development,
+          React.js, JavaScript, APIs, and responsive UI development.
         </p>
-
       </div>
 
     </section>
