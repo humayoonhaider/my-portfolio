@@ -31,10 +31,8 @@ function MyProjects() {
         </p>
       </div>
 
-
       {/* Projects List */}
       <div className="projects-list">
-
 
         {/* ================= PROJECT 01 ================= */}
         <article
@@ -56,7 +54,6 @@ function MyProjects() {
               Management System
             </h3>
 
-            {/* Project Preview */}
             <div className="project-preview">
               <img
                 src="p.jpg"
@@ -64,7 +61,6 @@ function MyProjects() {
               />
             </div>
 
-            {/* Technologies */}
             <div className="project-tech">
               <span>React.js</span>
               <span>JavaScript</span>
@@ -80,32 +76,32 @@ function MyProjects() {
               responsive and interactive interface.
             </p>
 
-            {/* Actions */}
             <div className="project-actions">
 
-              <a
-                href="#"
+              <button
+                type="button"
                 className="btn-primary"
-                aria-label="View School Management Information System project"
+                aria-label="School Management Information System project coming soon"
+                disabled
               >
                 VIEW PROJECT
                 <span>↗</span>
-              </a>
+              </button>
 
-              <a
-                href="#"
+              <button
+                type="button"
                 className="btn-secondary"
-                aria-label="View School Management Information System source code on GitHub"
+                aria-label="School Management Information System GitHub repository coming soon"
+                disabled
               >
                 GITHUB
                 <span>↗</span>
-              </a>
+              </button>
 
             </div>
 
           </div>
         </article>
-
 
         {/* ================= PROJECT 02 ================= */}
         <article
@@ -127,7 +123,6 @@ function MyProjects() {
               Shopping Website
             </h3>
 
-            {/* Project Preview */}
             <div className="project-preview">
               <img
                 src="p.jpg"
@@ -135,7 +130,6 @@ function MyProjects() {
               />
             </div>
 
-            {/* Technologies */}
             <div className="project-tech">
               <span>React.js</span>
               <span>JavaScript</span>
@@ -150,32 +144,32 @@ function MyProjects() {
               user interface.
             </p>
 
-            {/* Actions */}
             <div className="project-actions">
 
-              <a
-                href="#"
+              <button
+                type="button"
                 className="btn-primary"
-                aria-label="View E-Commerce shopping project"
+                aria-label="E-Commerce shopping project coming soon"
+                disabled
               >
                 VIEW PROJECT
                 <span>↗</span>
-              </a>
+              </button>
 
-              <a
-                href="#"
+              <button
+                type="button"
                 className="btn-secondary"
-                aria-label="View E-Commerce project source code on GitHub"
+                aria-label="E-Commerce project GitHub repository coming soon"
+                disabled
               >
                 GITHUB
                 <span>↗</span>
-              </a>
+              </button>
 
             </div>
 
           </div>
         </article>
-
 
         {/* ================= PROJECT 03 ================= */}
         <article
@@ -197,7 +191,6 @@ function MyProjects() {
               Live Trade
             </h3>
 
-            {/* Project Preview */}
             <div className="project-preview">
               <img
                 src="p.jpg"
@@ -205,7 +198,6 @@ function MyProjects() {
               />
             </div>
 
-            {/* Technologies */}
             <div className="project-tech">
               <span>React.js</span>
               <span>JavaScript</span>
@@ -220,26 +212,27 @@ function MyProjects() {
               application.
             </p>
 
-            {/* Actions */}
             <div className="project-actions">
 
-              <a
-                href="#2"
+              <button
+                type="button"
                 className="btn-primary"
-                aria-label="View AURA-INTELLIGENCE Live Trade project"
+                aria-label="AURA-INTELLIGENCE Live Trade project coming soon"
+                disabled
               >
                 VIEW PROJECT
                 <span>↗</span>
-              </a>
+              </button>
 
-              <a
-                href="#1"
+              <button
+                type="button"
                 className="btn-secondary"
-                aria-label="View AURA-INTELLIGENCE project source code on GitHub"
+                aria-label="AURA-INTELLIGENCE GitHub repository coming soon"
+                disabled
               >
                 GITHUB
                 <span>↗</span>
-              </a>
+              </button>
 
             </div>
 
@@ -247,7 +240,6 @@ function MyProjects() {
         </article>
 
       </div>
-
 
       {/* Bottom Statement */}
       <div
