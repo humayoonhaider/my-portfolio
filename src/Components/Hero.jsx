@@ -40,19 +40,16 @@ className={`welcome reveal ${
 >
 WELCOME TO MY PORTFOLIO. </span>
 
-    <h1
-      ref={titleRef}
-      className={`reveal ${titleVisible ? "is-visible" : ""}`}
-    >
-      Hi, I'm{" "}
-      <span className="important">Muhammad Humayoon.</span>
-      <br />
-      I'm a{" "}
-      <span className="important">MERN Stack Developer</span>
-      <br />
-      building digital products people enjoy using.
-    </h1>
-
+ <h1
+  ref={titleRef}
+  className={`reveal ${titleVisible ? "is-visible" : ""}`}
+>
+  Hi, I'm{" "}
+  <span className="important">Muhammad Humayoon.</span>
+  <br />
+  I'm a{" "}
+  <span className="important">MERN Stack Developer.</span>
+</h1>
     <p
       ref={descRef}
       className={`intro-description reveal ${
