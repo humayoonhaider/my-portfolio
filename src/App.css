@@ -75,7 +75,9 @@ section {
   align-items: center;
   z-index: 1;
 }
-
+.section-heading p{
+  text-align: center;
+}
 .has-scroll-reveal > section,
 .has-scroll-reveal > footer,
 .has-scroll-reveal > section div {
