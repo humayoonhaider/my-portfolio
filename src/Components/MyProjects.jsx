@@ -56,6 +56,8 @@ function MyProjects() {
 
             <div className="project-preview">
               <img
+        loading="lazy"
+
                 src="project1.png"
                 alt="School Management Information System dashboard"
               />
@@ -127,6 +129,8 @@ function MyProjects() {
 
             <div className="project-preview">
               <img
+        loading="lazy"
+
                 src="project2.png"
                 alt="Modern e-commerce shopping website interface"
               />
@@ -198,6 +202,7 @@ function MyProjects() {
 
     <div className="project-preview">
       <img
+        loading="lazy"
         src="project3.png"
         alt="Intelligence Hub browser-based productivity tools interface"
       />
