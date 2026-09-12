@@ -56,7 +56,7 @@ function MyProjects() {
 
             <div className="project-preview">
               <img
-                src="p.jpg"
+                src="project1.png"
                 alt="School Management Information System dashboard"
               />
             </div>
@@ -76,29 +76,31 @@ function MyProjects() {
               responsive and interactive interface.
             </p>
 
-            <div className="project-actions">
+           <div className="project-actions">
 
-              <button
-                type="button"
-                className="btn-primary"
-                aria-label="School Management Information System project coming soon"
-                disabled
-              >
-                VIEW PROJECT
-                <span>↗</span>
-              </button>
+  <a
+    href="https://mis-for-school.vercel.app/"
+    className="btn-primary"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="View School Management Information System project"
+  >
+    VIEW PROJECT
+    <span>   ↗</span>
+  </a>
 
-              <button
-                type="button"
-                className="btn-secondary"
-                aria-label="School Management Information System GitHub repository coming soon"
-                disabled
-              >
-                GITHUB
-                <span>↗</span>
-              </button>
+  <a
+    href="https://github.com/humayoonhaider/MIS-FOR-SCHOOL"
+    className="btn-secondary"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="View School Management Information System source code on GitHub"
+  >
+    GITHUB
+    <span>↗</span>
+  </a>
 
-            </div>
+</div>
 
           </div>
         </article>
@@ -125,7 +127,7 @@ function MyProjects() {
 
             <div className="project-preview">
               <img
-                src="p.jpg"
+                src="project2.png"
                 alt="Modern e-commerce shopping website interface"
               />
             </div>
@@ -144,100 +146,106 @@ function MyProjects() {
               user interface.
             </p>
 
-            <div className="project-actions">
+<div className="project-actions">
 
-              <button
-                type="button"
-                className="btn-primary"
-                aria-label="E-Commerce shopping project coming soon"
-                disabled
-              >
-                VIEW PROJECT
-                <span>↗</span>
-              </button>
+  <a
+    href="https://e-commerece-shop.vercel.app/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="btn-primary"
+    aria-label="View E-Commerce shopping project"
+  >
+    VIEW PROJECT
+    <span>↗</span>
+  </a>
 
-              <button
-                type="button"
-                className="btn-secondary"
-                aria-label="E-Commerce project GitHub repository coming soon"
-                disabled
-              >
-                GITHUB
-                <span>↗</span>
-              </button>
+  <a
+    href="https://github.com/humayoonhaider/E-COMMERECE-SHOP"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="btn-secondary"
+    aria-label="View E-Commerce project GitHub repository"
+  >
+    GITHUB
+    <span>↗</span>
+  </a>
 
-            </div>
+</div>
+
 
           </div>
         </article>
 
         {/* ================= PROJECT 03 ================= */}
-        <article
-          ref={project3Ref}
-          className={`project-card reveal-right ${
-            project3Visible ? "is-visible" : ""
-          }`}
-        >
-          <div className="project-content">
+<article 
+  ref={project3Ref} 
+  className={`project-card reveal-right ${
+    project3Visible ? "is-visible" : ""
+  }`}
+>
+  <div className="project-content">
 
-            <span className="project-number section-tag">
-              03) TRADING PLATFORM
-            </span>
+    <span className="project-number section-tag">
+      03) INTELLIGENCE TOOLKIT
+    </span>
 
-            <h3>
-              <span className="important">
-                AURA-INTELLIGENCE
-              </span>{" "}
-              Live Trade
-            </h3>
+    <h3>
+      <span className="important">
+        INTELLIGENCE HUB
+      </span>{" "}
+      Smart Tools
+    </h3>
 
-            <div className="project-preview">
-              <img
-                src="p.jpg"
-                alt="AURA-INTELLIGENCE live trading platform interface"
-              />
-            </div>
+    <div className="project-preview">
+      <img
+        src="project3.png"
+        alt="Intelligence Hub browser-based productivity tools interface"
+      />
+    </div>
 
-            <div className="project-tech">
-              <span>React.js</span>
-              <span>JavaScript</span>
-              <span>REST API</span>
-              <span>API Integration</span>
-            </div>
+    <div className="project-tech">
+      <span>React.js</span>
+      <span>Vite</span>
+      <span>JavaScript</span>
+      <span>Browser APIs</span>
+    </div>
 
-            <p>
-              A trading-focused web experience built around presenting
-              financial information, market data, API-driven content,
-              and interactive user interfaces in a modern responsive
-              application.
-            </p>
+    <p>
+      A modern browser-based intelligence toolkit featuring smart text,
+      developer, data, and utility tools. Built entirely with frontend
+      technologies, with local processing, responsive interfaces, and
+      no backend or external API dependency.
+    </p>
 
-            <div className="project-actions">
+    <div className="project-actions">
 
-              <button
-                type="button"
-                className="btn-primary"
-                aria-label="AURA-INTELLIGENCE Live Trade project coming soon"
-                disabled
-              >
-                VIEW PROJECT
-                <span>↗</span>
-              </button>
+      <a
+        href="https://intelligence-hub-drab.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="btn-primary"
+        aria-label="View Intelligence Hub project"
+      >
+        VIEW PROJECT
+        <span>↗</span>
+      </a>
 
-              <button
-                type="button"
-                className="btn-secondary"
-                aria-label="AURA-INTELLIGENCE GitHub repository coming soon"
-                disabled
-              >
-                GITHUB
-                <span>↗</span>
-              </button>
+      <a
+        href="https://github.com/humayoonhaider/INTELLIGENCE-HUB"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="btn-secondary"
+        aria-label="View Intelligence Hub GitHub repository"
+      >
+        GITHUB
+        <span>↗</span>
+      </a>
 
-            </div>
+    </div>
 
-          </div>
-        </article>
+  </div>
+</article>
+
 
       </div>
 

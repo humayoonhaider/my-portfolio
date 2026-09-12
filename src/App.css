@@ -251,9 +251,12 @@ button {
   border: none;
   cursor: pointer;
 }
-button:focus-visible, button:focus,input:focus-visible {
+button:focus-visible, button:focus,input:focus-visible,a:focus-visible{
   outline: 2px solid var(--highlight);
   outline-offset: 2px;
+}
+button:focus,a:focus{
+  scale:1.01;
 }
 
 
