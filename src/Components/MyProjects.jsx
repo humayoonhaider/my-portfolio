@@ -1,277 +1,158 @@
+import { useState } from "react";
+import { ArrowUpRight } from "lucide-react";
 import "./MyProjects.css";
 import { useReveal } from "../hooks/useReveal";
+import { PORTFOLIO_PROJECTS, computeCardTilt } from "../data/projectsMeta";
+
+import schoolMisImg from "../assets/images/school_mis_wallpaper_1795679487017.jpg";
+import meridianMdcatImg from "../assets/images/meridian_mdcat_wallpaper_1795679487111.jpg";
+import aureliaHotelImg from "../assets/images/aurelia_hotel_wallpaper_1795679487927.jpg";
+import novaRoboticsImg from "../assets/images/nova_robotics_wallpaper_1795679488621.jpg";
+import zenvexAiImg from "../assets/images/zenvex_ai_wallpaper_1795679489674.jpg";
+
+const WALLPAPER_MAP = {
+  schoolMis: schoolMisImg,
+  meridianMdcat: meridianMdcatImg,
+  aureliaHotel: aureliaHotelImg,
+  novaRobotics: novaRoboticsImg,
+  zenvexAi: zenvexAiImg,
+};
+
+function ProjectCard({ project, index }) {
+  const [cardRef, cardVisible] = useReveal({ threshold: 0.05 });
+  const [tilt, setTilt] = useState({ rotateX: 0, rotateY: 0, active: false });
+
+  const handleMouseMove = (e) => {
+    if (window.innerWidth < 768) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const relX = (e.clientX - rect.left) / rect.width;
+    const relY = (e.clientY - rect.top) / rect.height;
+    const next = computeCardTilt(relX, relY, 5);
+    setTilt({ ...next, active: true });
+  };
+
+  const handleMouseLeave = () => {
+    setTilt({ rotateX: 0, rotateY: 0, active: false });
+  };
+
+  const revealClass =
+    project.featured
+      ? "reveal-scale"
+      : index % 2 === 1
+      ? "reveal-left"
+      : "reveal-right";
+
+  return (
+    <article
+      ref={cardRef}
+      data-testid={`project-card-${project.id}`}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className={`project-card ${project.featured ? "featured-project" : ""} ${revealClass} ${
+        cardVisible ? "is-visible" : ""
+      }`}
+      style={{
+        transform: tilt.active
+          ? `perspective(1100px) rotateX(${tilt.rotateX}deg) rotateY(${tilt.rotateY}deg) translateY(-6px)`
+          : undefined,
+      }}
+    >
+      <div className="project-preview">
+        <img
+          loading="lazy"
+          src={WALLPAPER_MAP[project.wallpaperKey]}
+          alt={project.alt}
+          referrerPolicy="no-referrer"
+        />
+      </div>
+
+      <div className="project-content">
+        <span className="project-number section-tag">{project.number}</span>
+
+        <h3>
+          <span className="important">{project.titleHighlight}</span>{" "}
+          {project.titleRest}
+        </h3>
+
+        <div className="project-tech">
+          {project.tech.map((item) => (
+            <span key={item}>{item}</span>
+          ))}
+        </div>
+
+        <p>{project.description}</p>
+
+        <div className="project-actions">
+          <a
+            href={project.liveUrl}
+            className="btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`View ${project.titleHighlight} ${project.titleRest} live project`}
+          >
+            VIEW PROJECT
+            <ArrowUpRight size={16} aria-hidden="true" />
+          </a>
+
+          {project.githubUrl && (
+            <a
+              href={project.githubUrl}
+              className="btn-secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`View ${project.titleHighlight} source code on GitHub`}
+            >
+              GITHUB
+              <ArrowUpRight size={16} aria-hidden="true" />
+            </a>
+          )}
+        </div>
+      </div>
+    </article>
+  );
+}
 
 function MyProjects() {
-  const [headingRef, headingVisible] = useReveal();
-  const [footerRef, footerVisible] = useReveal();
-  const [project1Ref, project1Visible] = useReveal();
-  const [project2Ref, project2Visible] = useReveal();
-  const [project3Ref, project3Visible] = useReveal();
+  const [headingRef, headingVisible] = useReveal({ threshold: 0.05 });
+  const [footerRef, footerVisible] = useReveal({ threshold: 0.05 });
 
   return (
     <section className="projects" id="myProjects">
-
       {/* Section Heading */}
       <div
         ref={headingRef}
-        className={`section-heading reveal ${
-          headingVisible ? "is-visible" : ""
-        }`}
+        className={`section-heading reveal ${headingVisible ? "is-visible" : ""}`}
       >
-        <span className="section-tag">
-          SELECTED WORK
-        </span>
+        <span className="section-tag">SELECTED WORK</span>
 
         <h2>PROJECTS</h2>
 
         <p>
-          A selection of web development projects built with React.js,
-          JavaScript, APIs, and modern frontend technologies to create
-          practical, responsive, and user-friendly digital experiences.
+          A curated showcase of modern 3D, AI, hospitality, and full-stack web
+          applications crafted with React.js, Three.js, and responsive design.
         </p>
       </div>
 
       {/* Projects List */}
-      <div className="projects-list">
-
-        {/* ================= PROJECT 01 ================= */}
-        <article
-          ref={project1Ref}
-          className={`project-card featured-project reveal-scale ${
-            project1Visible ? "is-visible" : ""
-          }`}
-        >
-          <div className="project-content">
-
-            <span className="project-number section-tag">
-              01) MANAGEMENT SYSTEM
-            </span>
-
-            <h3>
-              <span className="important">
-                School MIS
-              </span>{" "}
-              Management System
-            </h3>
-
-            <div className="project-preview">
-              <img
-        loading="lazy"
-
-                src="project1.png"
-                alt="School Management Information System dashboard"
-              />
-            </div>
-
-            <div className="project-tech">
-              <span>React.js</span>
-              <span>JavaScript</span>
-              <span>Axios</span>
-              <span>JSON Server</span>
-              <span>CRUD</span>
-            </div>
-
-            <p>
-              A modern School Management Information System built with
-              React.js for managing students, courses, fees, certificates,
-              enrollments, and administrative workflows through a
-              responsive and interactive interface.
-            </p>
-
-           <div className="project-actions">
-
-  <a
-    href="https://mis-for-school.vercel.app/"
-    className="btn-primary"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="View School Management Information System project"
-  >
-    VIEW PROJECT
-    <span>   ↗</span>
-  </a>
-
-  <a
-    href="https://github.com/humayoonhaider/MIS-FOR-SCHOOL"
-    className="btn-secondary"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="View School Management Information System source code on GitHub"
-  >
-    GITHUB
-    <span>↗</span>
-  </a>
-
-</div>
-
-          </div>
-        </article>
-
-        {/* ================= PROJECT 02 ================= */}
-        <article
-          ref={project2Ref}
-          className={`project-card reveal-left ${
-            project2Visible ? "is-visible" : ""
-          }`}
-        >
-          <div className="project-content">
-
-            <span className="project-number section-tag">
-              02) E-COMMERCE
-            </span>
-
-            <h3>
-              <span className="important">
-                E-Commerce
-              </span>{" "}
-              Shopping Website
-            </h3>
-
-            <div className="project-preview">
-              <img
-        loading="lazy"
-
-                src="project2.png"
-                alt="Modern e-commerce shopping website interface"
-              />
-            </div>
-
-            <div className="project-tech">
-              <span>React.js</span>
-              <span>JavaScript</span>
-              <span>CSS</span>
-              <span>Responsive UI</span>
-            </div>
-
-            <p>
-              A modern e-commerce shopping experience built with React.js,
-              focusing on responsive design, clean product presentation,
-              intuitive navigation, reusable components, and a smooth
-              user interface.
-            </p>
-
-<div className="project-actions">
-
-  <a
-    href="https://e-commerece-shop.vercel.app/"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="btn-primary"
-    aria-label="View E-Commerce shopping project"
-  >
-    VIEW PROJECT
-    <span>↗</span>
-  </a>
-
-  <a
-    href="https://github.com/humayoonhaider/E-COMMERECE-SHOP"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="btn-secondary"
-    aria-label="View E-Commerce project GitHub repository"
-  >
-    GITHUB
-    <span>↗</span>
-  </a>
-
-</div>
-
-
-          </div>
-        </article>
-
-        {/* ================= PROJECT 03 ================= */}
-<article 
-  ref={project3Ref} 
-  className={`project-card reveal-right ${
-    project3Visible ? "is-visible" : ""
-  }`}
->
-  <div className="project-content">
-
-    <span className="project-number section-tag">
-      03) INTELLIGENCE TOOLKIT
-    </span>
-
-    <h3>
-      <span className="important">
-        INTELLIGENCE HUB
-      </span>{" "}
-      Smart Tools
-    </h3>
-
-    <div className="project-preview">
-      <img
-        loading="lazy"
-        src="project3.png"
-        alt="Intelligence Hub browser-based productivity tools interface"
-      />
-    </div>
-
-    <div className="project-tech">
-      <span>React.js</span>
-      <span>Vite</span>
-      <span>JavaScript</span>
-      <span>Browser APIs</span>
-    </div>
-
-    <p>
-      A modern browser-based intelligence toolkit featuring smart text,
-      developer, data, and utility tools. Built entirely with frontend
-      technologies, with local processing, responsive interfaces, and
-      no backend or external API dependency.
-    </p>
-
-    <div className="project-actions">
-
-      <a
-        href="https://intelligence-hub-drab.vercel.app/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="btn-primary"
-        aria-label="View Intelligence Hub project"
-      >
-        VIEW PROJECT
-        <span>↗</span>
-      </a>
-
-      <a
-        href="https://github.com/humayoonhaider/INTELLIGENCE-HUB"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="btn-secondary"
-        aria-label="View Intelligence Hub GitHub repository"
-      >
-        GITHUB
-        <span>↗</span>
-      </a>
-
-    </div>
-
-  </div>
-</article>
-
-
+      <div className="projects-list" data-testid="projects-grid">
+        {PORTFOLIO_PROJECTS.map((project, index) => (
+          <ProjectCard key={project.id} project={project} index={index} />
+        ))}
       </div>
 
       {/* Bottom Statement */}
       <div
         ref={footerRef}
-        className={`projects-footer reveal ${
-          footerVisible ? "is-visible" : ""
-        }`}
+        className={`projects-footer reveal ${footerVisible ? "is-visible" : ""}`}
       >
-        <span className="section-tag">
-          BUILD. LEARN. IMPROVE.
-        </span>
+        <span className="section-tag">BUILD. LEARN. IMPROVE.</span>
 
         <p>
-          Every project is an opportunity to turn an idea into something
-          useful, while improving my skills in modern web development,
-          React.js, JavaScript, APIs, and responsive UI development.
+          Every project is an opportunity to turn an idea into something useful,
+          while pushing the boundaries of 3D interfaces, React.js, APIs, and
+          responsive UI engineering.
         </p>
       </div>
-
     </section>
   );
 }

@@ -1,4 +1,5 @@
 import "./App.css";
+import ThreeBackground from "./Components/ThreeBackground";
 
 import AboutMe from "./Components/AboutMe";
 import ContactMe from "./Components/ContactMe";
@@ -13,6 +14,7 @@ import WhatIBring from "./Components/WhatIBring";
 function App() {
   return (
     <div className="my-portfolio">
+      <ThreeBackground />
 
       {/* Cursor Glow */}
       <div className="glow"></div>

@@ -7,13 +7,11 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 5%;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  background: var(--primary-t);
+  background: rgba(255, 255, 255, 0.94);
   border-bottom: 1px solid var(--border);
   z-index: 1000;
-  box-shadow: 0 4px 30px var(--primary-t);
-  transition: height 1s ease-in-out;
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
+  transition: height 0.35s ease-in-out;
   overflow: hidden;
 }
 
@@ -30,12 +28,10 @@
 .navbar .logo {
   text-decoration: none;
   color: var(--highlight);
-  background: var(--highlight);
   font-size: var(--h3-size);
   font-family: var(--highlight-font);
   font-weight: 700;
   letter-spacing: -0.5px;
-  background-clip: text;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -121,10 +117,10 @@
   gap: 6px;
   font-family: var(--highlight-font);
   border-radius: 10px;
-  box-shadow: 0 4px 15px var(--accent);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.25);
   transition: all 0.2s ease-in-out;
   font-weight: 600;
-  color: var(--heading);
+  color: #ffffff;
   border: none;
   cursor: pointer;
 }
@@ -201,7 +197,7 @@
   margin-top: 16px;
   padding: 14px 24px;
   background: var(--highlight);
-  color: var(--heading);
+  color: #ffffff;
   border-radius: 10px;
   font-weight: 600;
   display: flex;

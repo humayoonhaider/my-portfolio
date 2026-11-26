@@ -27,8 +27,8 @@ export function useReveal(options = {}) {
         });
       },
       {
-        threshold: options.threshold ?? 0.15,
-        rootMargin: options.rootMargin ?? "0px 0px -50px 0px",
+        threshold: options.threshold ?? 0.05,
+        rootMargin: options.rootMargin ?? "0px 0px 40px 0px",
       }
     );
 
